@@ -1,10 +1,10 @@
 package chap_06;
 
 public class _Quiz_06 {
-    public static String getHiddenData(String name, int cnt){
-        String result = name.substring(0,cnt);
-        for (int i = 0; i <name.length()-cnt ; i++) {
-            result += '*';
+    public static String getHiddenData(String st, int idx){
+        String result = st.substring(0,idx);
+        for (int i = idx; i < st.length() ; i++) {
+            result += "*";
         }
         return result;
     }

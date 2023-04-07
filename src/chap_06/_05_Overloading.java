@@ -22,5 +22,4 @@ public class _05_Overloading {
         System.out.println((getPower(3)));
     }
 
-
 }
