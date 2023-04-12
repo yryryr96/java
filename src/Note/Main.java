@@ -1,30 +1,39 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class Main{
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(br.readLine());
-        int ans = t;
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
-        for (int i = 0; i < t ; i++) {
-            String word = br.readLine();
-            boolean[] alphabet = new boolean[26] ;
-            char now = word.charAt(0);
+        int[][] A = new int[n][m];
+        int[][] B = new int[n][m];
 
-            for (int j = 0; j < word.length() ; j++) {
-                if (now != word.charAt(j)){
-                    if (alphabet[word.charAt(j)-97]) {
-                        ans --;
-                        break;
-                    }
-                    alphabet[now-97] = true;
-                }
-                now = word.charAt(j);
+        for (int i = 0; i <n ; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j = 0; j <m ; j++) {
+                A[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        System.out.println(ans);
+        for (int i = 0; i <n ; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j = 0; j <m ; j++) {
+                B[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i <n ; i++) {
+            for (int j = 0; j <m ; j++) {
+                sb.append(A[i][j] + B[i][j]).append(" ");
+            }
+            sb.append("\n");
+        }
+        System.out.println(sb);
+
+
+
     }
 }
